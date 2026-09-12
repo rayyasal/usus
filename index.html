@@ -6,6 +6,61 @@
 <title>USUS &mdash; Interior Design Studio</title>
 <meta name="description" content="USUS designs high-end interiors across Lebanon & UAE, residential and commercial, with a warm artisanal aesthetic. Full process from concept through turnkey delivery.">
 <link rel="stylesheet" href="styles.css">
+
+<style>
+  /* Single-image carousel container */
+  .carousel-container {
+    position: relative;
+    max-width: 450px;
+    margin: 1rem auto;
+  }
+
+  /* Hide default scrollbars and enforce single-frame scrolling */
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+
+  .carousel::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Opera */
+  }
+
+  .carousel img {
+    scroll-snap-align: start;
+    flex: 0 0 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+  }
+
+  /* Circular arrow buttons */
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    border: none;
+    font-size: 1.2rem;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background 0.2s ease;
+  }
+
+  .carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .carousel-btn.prev { left: 10px; }
+  .carousel-btn.next { right: 10px; }
+</style>
 </head>
 <body>
 
@@ -57,20 +112,24 @@
         </div>
       </article>
 
-     <article class="work-item">
-      <div class="carousel" style="display: flex; overflow-x: auto; gap: 12px; scroll-snap-type: x mandatory; margin-top: 1rem;">
-          <img src="assets/Belman%20Residence/1.png" alt="Belman Residence 1" style="scroll-snap-align: start; flex: 0 0 auto; width: 85%; max-width: 450px; height: auto; border-radius: 4px;">
-          <img src="assets/Belman%20Residence/2.png" alt="Belman Residence 2" style="scroll-snap-align: start; flex: 0 0 auto; width: 85%; max-width: 450px; height: auto; border-radius: 4px;">
-          <img src="assets/Belman%20Residence/3.png" alt="Belman Residence 3" style="scroll-snap-align: start; flex: 0 0 auto; width: 85%; max-width: 450px; height: auto; border-radius: 4px;">
-          <img src="assets/Belman%20Residence/4.png" alt="Belman Residence 4" style="scroll-snap-align: start; flex: 0 0 auto; width: 85%; max-width: 450px; height: auto; border-radius: 4px;">
-          <img src="assets/Belman%20Residence/5.png" alt="Belman Residence 5" style="scroll-snap-align: start; flex: 0 0 auto; width: 85%; max-width: 450px; height: auto; border-radius: 4px;">
-          <img src="assets/Belman%20Residence/6.png" alt="Belman Residence 6" style="scroll-snap-align: start; flex: 0 0 auto; width: 85%; max-width: 450px; height: auto; border-radius: 4px;">
-          <img src="assets/Belman%20Residence/7.png" alt="Belman Residence 7" style="scroll-snap-align: start; flex: 0 0 auto; width: 85%; max-width: 450px; height: auto; border-radius: 4px;">
-          <img src="assets/Belman%20Residence/8.png" alt="Belman Residence 8" style="scroll-snap-align: start; flex: 0 0 auto; width: 85%; max-width: 450px; height: auto; border-radius: 4px;">
-          <img src="assets/Belman%20Residence/9.png" alt="Belman Residence 9" style="scroll-snap-align: start; flex: 0 0 auto; width: 85%; max-width: 450px; height: auto; border-radius: 4px;">
-          <img src="assets/Belman%20Residence/10.png" alt="Belman Residence 10" style="scroll-snap-align: start; flex: 0 0 auto; width: 85%; max-width: 450px; height: auto; border-radius: 4px;">
-          <img src="assets/Belman%20Residence/11.png" alt="Belman Residence 11" style="scroll-snap-align: start; flex: 0 0 auto; width: 85%; max-width: 450px; height: auto; border-radius: 4px;">
-          <img src="assets/Belman%20Residence/12.jpg" alt="Belman Residence 12" style="scroll-snap-align: start; flex: 0 0 auto; width: 85%; max-width: 450px; height: auto; border-radius: 4px;">
+      <article class="work-item">
+        <div class="carousel-container">
+          <button class="carousel-btn prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+          <div class="carousel">
+            <img src="assets/Belman%20Residence/1.png" alt="Belman Residence 1">
+            <img src="assets/Belman%20Residence/2.png" alt="Belman Residence 2">
+            <img src="assets/Belman%20Residence/3.png" alt="Belman Residence 3">
+            <img src="assets/Belman%20Residence/4.png" alt="Belman Residence 4">
+            <img src="assets/Belman%20Residence/5.png" alt="Belman Residence 5">
+            <img src="assets/Belman%20Residence/6.png" alt="Belman Residence 6">
+            <img src="assets/Belman%20Residence/7.png" alt="Belman Residence 7">
+            <img src="assets/Belman%20Residence/8.png" alt="Belman Residence 8">
+            <img src="assets/Belman%20Residence/9.png" alt="Belman Residence 9">
+            <img src="assets/Belman%20Residence/10.png" alt="Belman Residence 10">
+            <img src="assets/Belman%20Residence/11.png" alt="Belman Residence 11">
+            <img src="assets/Belman%20Residence/12.jpg" alt="Belman Residence 12">
+          </div>
+          <button class="carousel-btn next" onclick="scrollCarousel(this, 1)">&#10095;</button>
         </div>
         <div>
           <p class="loc">Chanai, Mount Lebanon</p>
@@ -79,12 +138,16 @@
         </div>
       </article>
 
-     article class="work-item">
-       <div class="carousel" style="display: flex; overflow-x: auto; gap: 12px; scroll-snap-type: x mandatory; margin-top: 1rem;">
-          <img src="assets/Salman%20Residence/1.png" alt="Salman Residence 1" style="scroll-snap-align: start; flex: 0 0 auto; width: 85%; max-width: 450px; height: auto; border-radius: 4px;">
-          <img src="assets/Salman%20Residence/2.png" alt="Salman Residence 2" style="scroll-snap-align: start; flex: 0 0 auto; width: 85%; max-width: 450px; height: auto; border-radius: 4px;">
-          <img src="assets/Salman%20Residence/3.png" alt="Salman Residence 3" style="scroll-snap-align: start; flex: 0 0 auto; width: 85%; max-width: 450px; height: auto; border-radius: 4px;">
-          <img src="assets/Salman%20Residence/4.png" alt="Salman Residence 4" style="scroll-snap-align: start; flex: 0 0 auto; width: 85%; max-width: 450px; height: auto; border-radius: 4px;">
+      <article class="work-item">
+        <div class="carousel-container">
+          <button class="carousel-btn prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+          <div class="carousel">
+            <img src="assets/Salman%20Residence/1.png" alt="Salman Residence 1">
+            <img src="assets/Salman%20Residence/2.png" alt="Salman Residence 2">
+            <img src="assets/Salman%20Residence/3.png" alt="Salman Residence 3">
+            <img src="assets/Salman%20Residence/4.png" alt="Salman Residence 4">
+          </div>
+          <button class="carousel-btn next" onclick="scrollCarousel(this, 1)">&#10095;</button>
         </div>
         <div>
           <p class="loc">Jumeirah Village Circle, Dubai</p>
@@ -104,12 +167,16 @@
       <p>Before USUS, our founder led design and delivery work across some of the region&rsquo;s most demanding retail and hospitality environments.</p>
     </div>
     
-    <div class="carousel" style="display: flex; overflow-x: auto; gap: 12px; scroll-snap-type: x mandatory; margin-bottom: 2rem;">
-      <img src="assets/Project%20Management/1.png" alt="Project Managed 1" style="scroll-snap-align: start; flex: 0 0 auto; width: 85%; max-width: 450px; height: auto; border-radius: 4px;">
-      <img src="assets/Project%20Management/2.png" alt="Project Managed 2" style="scroll-snap-align: start; flex: 0 0 auto; width: 85%; max-width: 450px; height: auto; border-radius: 4px;">
-      <img src="assets/Project%20Management/3.png" alt="Project Managed 3" style="scroll-snap-align: start; flex: 0 0 auto; width: 85%; max-width: 450px; height: auto; border-radius: 4px;">
-      <img src="assets/Project%20Management/4.png" alt="Project Managed 4" style="scroll-snap-align: start; flex: 0 0 auto; width: 85%; max-width: 450px; height: auto; border-radius: 4px;">
-      <img src="assets/Project%20Management/5.png" alt="Project Managed 5" style="scroll-snap-align: start; flex: 0 0 auto; width: 85%; max-width: 450px; height: auto; border-radius: 4px;">
+    <div class="carousel-container">
+      <button class="carousel-btn prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+      <div class="carousel">
+        <img src="assets/Project%20Management/1.png" alt="Project Managed 1">
+        <img src="assets/Project%20Management/2.png" alt="Project Managed 2">
+        <img src="assets/Project%20Management/3.png" alt="Project Managed 3">
+        <img src="assets/Project%20Management/4.png" alt="Project Managed 4">
+        <img src="assets/Project%20Management/5.png" alt="Project Managed 5">
+      </div>
+      <button class="carousel-btn next" onclick="scrollCarousel(this, 1)">&#10095;</button>
     </div>
 
     <p>Our founder spent a year at a Beirut design consultancy &mdash; drafting for Ritz-Carlton, working on a signage project for Sofitel Morocco, and designing residential projects as a junior designer. She then spent three years in Dubai leading fit-out and main contracting, including the Chanel Perfumery Boutique in Dubai Mall, Virgin Megastore, Paul Cafe, Chez Charles, and The Butcher Shop &amp; Grill for the Azadea Group.</p>
@@ -174,6 +241,18 @@
     <span>&copy; 2026 USUS. All rights reserved.</span>
   </div>
 </footer>
+
+<script>
+  function scrollCarousel(button, direction) {
+    const container = button.parentElement;
+    const carousel = container.querySelector('.carousel');
+    const imageWidth = carousel.clientWidth;
+    carousel.scrollBy({
+      left: direction * imageWidth,
+      behavior: 'smooth'
+    });
+  }
+</script>
 
 </body>
 </html>
